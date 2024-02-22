@@ -2,6 +2,7 @@ import PrimaryButton from '@components/buttons/PrimaryButton'
 import InputField from '@components/form/InputField/InputField'
 import { emailRule, requiredRule } from '@constant/formRules'
 import withLoginPage from './withLoginPage'
+import withAuthenticationGuard from '@libs/hoc/withAuthenticationGuard'
 
 const LoginPage = ({ control, handleLogin }: any) => {
   return (
@@ -38,5 +39,5 @@ const LoginPage = ({ control, handleLogin }: any) => {
   )
 }
 
-const WrappedComponent = withLoginPage(LoginPage)
+const WrappedComponent = withAuthenticationGuard(withLoginPage(LoginPage))
 export default WrappedComponent

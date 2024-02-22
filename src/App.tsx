@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { useState } from 'react'
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 const useCustomerStore = create(
   persist(
-    (set) => ({
+    set => ({
       customerAmount: 10,
       increaseCustomer: () =>
         set((state: any) => ({
@@ -16,19 +16,12 @@ const useCustomerStore = create(
         })),
     }),
     {
-      name: "customerAmount-storage",
+      name: 'customerAmount-storage',
     }
   )
-);
+)
 
 function App() {
-  const totalCustomer = useCustomerStore((state: any) => state.customerAmount);
-  const increaseCustomer = useCustomerStore(
-    (state: any) => state.increaseCustomer
-  );
-  const decreaseCustomer = useCustomerStore(
-    (state: any) => state.decreaseCustomer
-  );
   return (
     <>
       {/* <h1 className="text-3xl font-bold underline">Hello world!</h1>
@@ -41,7 +34,7 @@ function App() {
         -
       </button> */}
     </>
-  );
+  )
 }
 
-export default App;
+export default App

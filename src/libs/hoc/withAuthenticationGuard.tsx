@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router'
-import { CompanyRoutesPath } from '@config/Router.ts'
-import { FunctionComponentType } from '@interfaces/FunctionComponentType.ts'
-import { useAppStore } from '../../store/store.ts'
+import {
+  AuthenticationRoutesPath,
+  DashboardRoutesPath,
+} from '@config/Router.ts'
 
-const withUnAuthenticationGuard = (
+import { useAppStore } from '../../store/store.ts'
+import { FunctionComponentType } from '@interfaces/FunctionComponentType.ts'
+
+const withAuthenticationGuard = (
   Component: React.FC<FunctionComponentType>
 ) => {
   const Hoc = (props: FunctionComponentType) => {
@@ -12,7 +16,10 @@ const withUnAuthenticationGuard = (
     const isAuth = useAppStore(state => state.isAuth)
     useEffect(() => {
       if (isAuth) {
-        navigate(CompanyRoutesPath.companyList.absolutePath)
+        navigate(DashboardRoutesPath.dashboard.absolutePath)
+      }
+      if (!isAuth) {
+        navigate(AuthenticationRoutesPath.login.absolutePath)
       }
     }, [isAuth, navigate])
 
@@ -20,4 +27,4 @@ const withUnAuthenticationGuard = (
   }
   return Hoc
 }
-export default withUnAuthenticationGuard
+export default withAuthenticationGuard
