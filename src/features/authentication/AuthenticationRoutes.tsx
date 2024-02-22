@@ -1,7 +1,8 @@
 import AuthenticationLayout from "@components/AppLayout/components/AuthenticationLayout";
 import { AuthenticationRoutesPath, authenticationPath } from "@config/Router";
+import LoginPage from "@features/authentication/pages/LoginPage/LoginPage";
 import { Outlet } from "react-router-dom";
-import LoginPage from "./pages/LoginPage/LoginPage";
+// import LoginPage from "@features/authentication/pages/LoginPage/LoginPage";
 
 export const AuthenticationRoutes = {
   path: authenticationPath,
