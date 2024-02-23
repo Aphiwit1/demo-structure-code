@@ -19,7 +19,7 @@ const withLoginPage = (Component: React.FC) => {
       password,
     }: any) => {
       console.log(email, password)
-
+      alert('xxxx')
       loginAuth('sfwef4')
       toast.success('Login successfully')
     }

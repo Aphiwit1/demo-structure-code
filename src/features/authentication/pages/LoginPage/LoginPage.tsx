@@ -29,7 +29,7 @@ const LoginPage = ({ control, handleLogin }: any) => {
           label='Password'
           className='mb-[24px]'
         />
-        <div className='flex justify-end items-center'>
+        <div className=''>
           <PrimaryButton className='w-full bg-blue-600' type='submit'>
             Login
           </PrimaryButton>
