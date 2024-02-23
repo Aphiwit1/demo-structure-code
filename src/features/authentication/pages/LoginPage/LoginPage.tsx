@@ -20,7 +20,7 @@ const LoginPage = ({ control, handleLogin }: any) => (
         className='mb-[23px]'
       />
       <InputField
-        name="'''''password"
+        name='password'
         control={control}
         rules={requiredRule}
         placeholder='Enter your password'
