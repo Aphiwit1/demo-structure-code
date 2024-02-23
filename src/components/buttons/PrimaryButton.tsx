@@ -9,7 +9,7 @@ const PrimaryButton = ({
   disabled,
   ...props
 }: ButtonInterfaceProps) => {
-  const bgColor = disabled ? 'bg-gray-300' : isError ? 'bg-red' : 'bg-primary'
+  const bgColor = disabled ? 'bg-gray-300' : isError ? 'bg-red' : 'bg-blue-600'
   return (
     <button
       type={type}

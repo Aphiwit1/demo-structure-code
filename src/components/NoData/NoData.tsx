@@ -15,7 +15,7 @@ const NoData = ({
     </div>
     {isSearch && (
       <div className='text-base text-center break-all'>
-        We couldn’t find what you search for.
+        {isShowIcon} We couldn’t find what you search for.
         <br />
         Please try searching again.
       </div>

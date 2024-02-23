@@ -2,8 +2,8 @@ import OutlinedButton from '@components/buttons/OutlinedButton'
 import PrimaryButton from '@components/buttons/PrimaryButton'
 
 import { ModalContext } from '@components/Modal/context/ModalContext'
-import React, { useContext, useState } from 'react'
-import { CheckCircleIcon } from '@components/Icons/Icons.tsx'
+import { useContext, useState } from 'react'
+// import { CheckCircleIcon } from '@components/Icons/Icons.tsx'
 import { ConfirmModalProps } from './interface'
 
 const ConfirmModal = ({
@@ -24,9 +24,10 @@ const ConfirmModal = ({
   return (
     <div className='w-[304px] relative'>
       <div className='flex flex-col items-center'>
-        {showIcon && (
+        {/* {showIcon && (
           <CheckCircleIcon width='24' height='24' className='text-primary' />
-        )}
+        )} */}
+        {showIcon}
         <div className='mt-[9px] px-[40px] text-center text-gray-secondary'>
           {message}
         </div>
