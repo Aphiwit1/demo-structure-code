@@ -4,9 +4,8 @@ import {
   AuthenticationRoutesPath,
   DashboardRoutesPath,
 } from '@config/Router.ts'
-
-import { useAppStore } from '../../store/store.ts'
 import { FunctionComponentType } from '@interfaces/FunctionComponentType.ts'
+import { useAppStore } from '../../store/store.ts'
 
 const withAuthenticationGuard = (
   Component: React.FC<FunctionComponentType>

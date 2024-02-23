@@ -1,9 +1,10 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { CredentialType } from './interface'
 
 import { useAppStore } from 'src/store/store'
 import { toast } from 'react-toastify'
+
+import { CredentialType } from './interface'
 
 const withLoginPage = (Component: React.FC) => {
   const Hoc = () => {
@@ -18,8 +19,6 @@ const withLoginPage = (Component: React.FC) => {
       email,
       password,
     }: any) => {
-      console.log(email, password)
-      alert('xxxx')
       loginAuth('sfwef4')
       toast.success('Login successfully')
     }

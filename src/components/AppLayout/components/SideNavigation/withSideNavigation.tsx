@@ -7,12 +7,10 @@ const withSideNavigation = (Component: React.FC) => {
   const Hoc = () => {
     const logout = useAppStore(state => state.logout)
     const onHandleLogout = () => {
-      if (true) {
-        openDeleteModal({
-          onConfirm: () => logout(),
-          message: 'Are you sure to Logout?',
-        })
-      }
+      openDeleteModal({
+        onConfirm: () => logout(),
+        message: 'Are you sure to Logout?',
+      })
     }
 
     const { openModal: openDeleteModal } = useModal<any>({

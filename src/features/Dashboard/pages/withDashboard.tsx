@@ -19,12 +19,9 @@ const withDashboard = (Component: React.FC) => {
     })
 
     const handleOnDeleteDocument = async () => {
-      if (true) {
-        await openDeleteModal({
-          onConfirm: () => alert('confirm'),
-          message: 'Are you sure to delete this document',
-        })
-      }
+      await openDeleteModal({
+        message: 'Are you sure to delete this document',
+      })
     }
 
     const newProps: any = {
