@@ -21,14 +21,16 @@ const LoginPage = ({ control, handleLogin }: any) => {
           className='mb-[23px]'
         />
         <InputField
-          name='password'
+          name="'''''password"
           control={control}
+          test=''
           rules={requiredRule}
           placeholder='Enter your password'
           type='password'
           label='Password'
           className='mb-[24px]'
         />
+
         <div className=''>
           <PrimaryButton className='w-full bg-blue-600' type='submit'>
             Login
