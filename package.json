@@ -2,7 +2,6 @@
   "name": "code-structure-demo",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -35,6 +34,7 @@
     "react-select": "^5.8.0",
     "react-toastify": "^10.0.4",
     "reflect-metadata": "^0.2.1",
+    "string-width": "4.2.3",
     "tailwind-merge": "^2.2.1",
     "use-react-router-breadcrumbs": "^4.0.1",
     "vite-plugin-svgr": "^4.2.0",
@@ -42,11 +42,10 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
-    "@graphql-codegen/client-preset": "^4.2.3",
-    "@graphql-codegen/typescript-react-query": "^6.1.0",
+    "@graphql-codegen/client-preset": "^4.2.4",
     "@hookform/devtools": "^4.3.1",
-    "@parcel/watcher": "^2.4.0",
-    "@types/react": "^18.2.57",
+    "@parcel/watcher": "^2.4.1",
+    "@types/react": "^18.2.60",
     "@types/react-datepicker": "^6.0.1",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
@@ -71,7 +70,7 @@
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.3",
     "vite": "^5.1.0",
     "vite-tsconfig-paths": "^4.3.1"
   }
