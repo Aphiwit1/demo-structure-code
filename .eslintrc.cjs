@@ -6,7 +6,8 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json', 'cypress/tsconfig.json'],
   },
-  plugins: ['react-refresh', 'react', '@typescript-eslint'],
+  plugins: ['react-refresh', 'react', 'import', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
   extends: [
     'airbnb',
     'airbnb-typescript',
@@ -24,7 +25,7 @@ module.exports = {
     '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'class-methods-use-this': 'off',
-    'import/prefer-default-export': 'off',
+    'import/prefer-default-export': 'true',
     'import/no-cycle': 'warn',
     'import/extensions': ['off'],
     'import/no-extraneous-dependencies': 'off',

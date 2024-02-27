@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-
 import {
   InputFieldAcceptProps,
   InputFieldProps,
 } from '@components/form/InputField/interface'
+import React, { useState } from 'react'
 
 const withInputField = (Component: React.FC<InputFieldProps>) => {
   const Hoc = ({ type, ...props }: InputFieldAcceptProps) => {
