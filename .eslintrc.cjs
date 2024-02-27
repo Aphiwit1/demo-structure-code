@@ -25,7 +25,7 @@ module.exports = {
     '@typescript-eslint/no-unused-expressions': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     'class-methods-use-this': 'off',
-    'import/prefer-default-export': 'true',
+    'import/prefer-default-export': 'off',
     'import/no-cycle': 'warn',
     'import/extensions': ['off'],
     'import/no-extraneous-dependencies': 'off',

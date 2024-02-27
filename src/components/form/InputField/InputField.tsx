@@ -1,8 +1,9 @@
-import { Controller } from "react-hook-form";
-import { twJoin, twMerge } from "tailwind-merge";
+import { twJoin, twMerge } from 'tailwind-merge'
 // import { EyeIcon, EyeSlashIcon } from '@components/Icons/Icons.tsx'
-import { withInputField } from "./withInputField";
-import { InputFieldProps } from "./interface";
+import { withInputField } from './withInputField'
+import { InputFieldProps } from './interface'
+
+import { Controller } from 'react-hook-form'
 
 const InputField = ({
   name,
@@ -29,24 +30,24 @@ const InputField = ({
     rules={rules}
     shouldUnregister={shouldUnregister}
     render={({ field, fieldState: { error } }) => (
-      <div className={twMerge("inline-block w-full", className)}>
-        <div className="relative flex-wrap w-full items-stretch">
+      <div className={twMerge('inline-block w-full', className)}>
+        <div className='relative flex-wrap w-full items-stretch'>
           {label && (
-            <div className="flex flex-row space-x-2">
+            <div className='flex flex-row space-x-2'>
               <div
                 className={twMerge(
-                  "text-base mb-[8px] font-bold text-black",
+                  'text-base mb-[8px] font-bold text-black',
                   labelClassName
                 )}
               >
-                {label} {required && <span className="text-red">*</span>}
+                {label} {required && <span className='text-red'>*</span>}
               </div>
             </div>
           )}
-          <label className="relative flex items-center">
+          <label className='relative flex items-center'>
             <input
               {...field}
-              value={field.value || ""}
+              value={field.value || ''}
               className={`
                   relative
                   w-full h-[40px] bg-gray-secondary p-[10px] text-black 
@@ -54,31 +55,31 @@ const InputField = ({
                   focus:border-blue
                 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed 
                 placeholder-gray-400  placeholder:text-xs
-                  ${error && "border-red border"}
-                  ${suffixIcon && "pr-[36px]"}
+                  ${error && 'border-red border'}
+                  ${suffixIcon && 'pr-[36px]'}
                   ${inputClassName}
                 `}
               disabled={disabled}
               type={type}
-              autoComplete={type === "password" ? "name" : undefined}
+              autoComplete={type === 'password' ? 'name' : undefined}
               placeholder={placeholder}
               maxLength={maxLength}
-              onChange={(event) => {
-                const targetValue = event.target.value;
-                if (type === "number") {
-                  const parseNumValue = parseFloat(targetValue);
+              onChange={event => {
+                const targetValue = event.target.value
+                if (type === 'number') {
+                  const parseNumValue = parseFloat(targetValue)
                   if (Number.isNaN(parseNumValue)) {
-                    field.onChange(null);
+                    field.onChange(null)
                   } else {
-                    field.onChange(parseNumValue);
+                    field.onChange(parseNumValue)
                   }
 
-                  customOnChanged && customOnChanged();
-                  return;
+                  customOnChanged && customOnChanged()
+                  return
                 }
 
-                field.onChange(targetValue || null);
-                customOnChanged && customOnChanged();
+                field.onChange(targetValue || null)
+                customOnChanged && customOnChanged()
               }}
             />
 
@@ -86,7 +87,7 @@ const InputField = ({
               <div
                 className={twJoin(
                   `absolute cursor-pointer`,
-                  suffixIcon ? "right-6" : "right-3"
+                  suffixIcon ? 'right-6' : 'right-3'
                 )}
                 onClick={handleTogglePassword}
               >
@@ -94,13 +95,13 @@ const InputField = ({
               </div>
             )}
             {suffixIcon && (
-              <div className={`absolute right-3 ${disabled && "opacity-30"}`}>
+              <div className={`absolute right-3 ${disabled && 'opacity-30'}`}>
                 {suffixIcon}
               </div>
             )}
           </label>
           {error && (
-            <div className="mt-[8px] text-xs text-red top-full">
+            <div className='mt-[8px] text-xs text-red top-full'>
               {error.message}
             </div>
           )}
@@ -108,7 +109,7 @@ const InputField = ({
       </div>
     )}
   />
-);
+)
 
-const WrappedComponent = withInputField(InputField);
-export default WrappedComponent;
+const WrappedComponent = withInputField(InputField)
+export default WrappedComponent
