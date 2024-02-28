@@ -2,7 +2,6 @@
 import { GraphQLClient } from 'graphql-request';
 import { RequestInit } from 'graphql-request/dist/types.dom';
 import { useQuery, UseQueryOptions } from '@tanstack/react-query';
-
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -1360,11 +1359,13 @@ export const useNuengQueryQuery = <
       variables?: NuengQueryQueryVariables,
       options?: UseQueryOptions<NuengQueryQuery, TError, TData>,
       headers?: RequestInit['headers']
-    ) => useQuery<NuengQueryQuery, TError, TData>(
+    ) => {
+    
+    return useQuery<NuengQueryQuery, TError, TData>(
       variables === undefined ? ['nuengQuery'] : ['nuengQuery', variables],
       fetcher<NuengQueryQuery, NuengQueryQueryVariables>(client, NuengQueryDocument, variables, headers),
       options
-    );
+    )};
 
 useNuengQueryQuery.getKey = (variables?: NuengQueryQueryVariables) => variables === undefined ? ['nuengQuery'] : ['nuengQuery', variables];
 

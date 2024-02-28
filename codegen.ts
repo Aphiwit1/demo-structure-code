@@ -3,7 +3,7 @@ import { CodegenConfig } from '@graphql-codegen/cli'
 require('dotenv').config()
 
 const config: CodegenConfig = {
-    schema: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
+  schema: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
   documents: ['src/client/graphql/**/*.tsx', 'src/client/graphql/**/*.ts'],
   ignoreNoDocuments: true, // for better experience with the watcher
   generates: {
@@ -18,7 +18,6 @@ const config: CodegenConfig = {
         // Ignore RequestInit TS-error
         { add: { content: '// @ts-nocheck' } },
       ],
-      hooks: { afterOneFileWrite: ['eslint --fix'] },
     },
     './src/client/graphql/gql-gen/': {
       config: {
