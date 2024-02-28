@@ -5,9 +5,8 @@ import { useAppStore } from 'src/store/store'
 import { toast } from 'react-toastify'
 
 import { CredentialType } from './interface'
-import { graphql } from 'src/gql'
-import { useQuery } from '@tanstack/react-query'
-import request from 'graphql-request'
+
+
 
 const withLoginPage = (Component: React.FC) => {
   const Hoc = () => {

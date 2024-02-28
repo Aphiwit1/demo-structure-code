@@ -23,7 +23,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "allowImportingTsExtensions": true,
+    "types": ["vite/client"]
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src",
+  "vite.config.ts",
+  "codegen.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["src/client/graphql/gql-gen", "node_modules"]
 }

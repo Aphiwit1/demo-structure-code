@@ -17,7 +17,7 @@ export const useAppStore = create<AppStore>()(
       ...createSideNavigationSlice(set, get, api),
     }),
     {
-      name: 'persist:Mockuthentication',
+      name: 'persist:authenticationByNueng',
       partialize: state => ({
         isAuth: state.isAuth,
         accessToken: state.accessToken,

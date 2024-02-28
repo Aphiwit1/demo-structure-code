@@ -8,6 +8,8 @@ import { ModalContextProvider } from '@components/Modal/context/ModalContext.tsx
 import App from './App.tsx'
 import Routes from './Routes.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ClientContextProvider } from '@client/clientContext.tsx'
+import { client } from '@client/init.ts'
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { retry: 1, refetchOnWindowFocus: false } },
@@ -15,7 +17,8 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
+      <ClientContextProvider client={client}>
+      <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ModalContextProvider>
           {/* <Routes /> */}
@@ -25,5 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
       <App />
     </QueryClientProvider>
+      </ClientContextProvider>
+ 
   </React.StrictMode>
 )

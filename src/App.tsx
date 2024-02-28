@@ -1,44 +1,21 @@
-import React from 'react'
-import request from 'graphql-request'
-import { useQuery } from '@tanstack/react-query'
 
 import './App.css'
-import Film from './Film'
-import { graphql } from '../src/gql'
 
-const allFilmsWithVariablesQueryDocument = graphql(/* GraphQL */ `
-  query allFilmsWithVariablesQuery($first: Int!) {
-    allFilms(first: $first) {
-      edges {
-        node {
-          ...FilmItem
-        }
-      }
-    }
-  }
-`)
+
+import { useNuengQueryQuery } from '@client/graphql/gql-gen/types-and-hooks'
+import { useGraphQLClient } from '@client/clientContext'
+
+
+
 
 function App() {
   // `data` is typed!
-  const { data } = useQuery(['films'], async () =>
-    request(
-      'https://swapi-graphql.netlify.app/.netlify/functions/index',
-      allFilmsWithVariablesQueryDocument,
-      {
-        first: 10, // variables are typed too!
-      }
-    )
-  )
-
+  const graphQLClient = useGraphQLClient()
+  const {data, isLoading }= useNuengQueryQuery(graphQLClient, {})
+  console.log('data : ', data)
   return (
     <div className='App'>
-      {data && (
-        <ul>
-          {data.allFilms?.edges?.map(
-            (e, i) => e?.node && <Film film={e?.node} key={`film-${i}`} />
-          )}
-        </ul>
-      )}
+       xx
     </div>
   )
 }
