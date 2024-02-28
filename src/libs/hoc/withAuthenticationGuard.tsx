@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router'
 import {
   AuthenticationRoutesPath,
-  DashboardRoutesPath,
+  SelectFactoryRoutesPath,
 } from '@config/Router.ts'
 import { FunctionComponentType } from '@interfaces/FunctionComponentType.ts'
 import { useAppStore } from '../../store/store.ts'
+import { SelectionFactoryRoutes } from '@features/SelectionFactory/SelectionFactoryRoutes.tsx'
 
 const withAuthenticationGuard = (
   Component: React.FC<FunctionComponentType>
@@ -15,7 +16,7 @@ const withAuthenticationGuard = (
     const isAuth = useAppStore(state => state.isAuth)
     useEffect(() => {
       if (isAuth) {
-        navigate(DashboardRoutesPath.dashboard.absolutePath)
+        navigate(SelectFactoryRoutesPath.selectFactory.absolutePath)
       }
       if (!isAuth) {
         navigate(AuthenticationRoutesPath.login.absolutePath)

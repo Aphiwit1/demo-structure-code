@@ -11,7 +11,7 @@ export const AuthenticationRoutesPath = {
     absolutePath: `/${authenticationPath}/register`,
   },
 };
-
+// ---------------------------------------------------------------------
 export const dashboardPath = "dashboard";
 export const DashboardRoutesPath = {
   dashboard: {
@@ -19,3 +19,12 @@ export const DashboardRoutesPath = {
     absolutePath: `/${dashboardPath}`,
   },
 };
+// ---------------------------------------------------------------------
+export const selectFactoryPath = "selectFactory";
+export const SelectFactoryRoutesPath = {
+  selectFactory: {
+    path: 'selectFactory',
+    absolutePath: `/${selectFactoryPath}`,
+  },
+};
+

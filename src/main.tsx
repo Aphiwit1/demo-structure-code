@@ -21,12 +21,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ModalContextProvider>
-          {/* <Routes /> */}
+          <Routes />
           <ToastContainer position='top-center' />
         </ModalContextProvider>
       </BrowserRouter>
 
-      <App />
+      {/* <App /> */}
     </QueryClientProvider>
       </ClientContextProvider>
  
