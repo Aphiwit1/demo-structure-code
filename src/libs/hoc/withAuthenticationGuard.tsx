@@ -6,7 +6,6 @@ import {
 } from '@config/Router.ts'
 import { FunctionComponentType } from '@interfaces/FunctionComponentType.ts'
 import { useAppStore } from '../../store/store.ts'
-import { SelectionFactoryRoutes } from '@features/SelectionFactory/SelectionFactoryRoutes.tsx'
 
 const withAuthenticationGuard = (
   Component: React.FC<FunctionComponentType>

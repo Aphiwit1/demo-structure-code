@@ -13,6 +13,7 @@ const initialAuthState = {
   accessToken: undefined,
   refreshToken: undefined,
   isAuth: false,
+  isSelectedFactory: false,
 }
 
 export const createAuthenticationSlice: StateCreator<
@@ -25,6 +26,14 @@ export const createAuthenticationSlice: StateCreator<
     set({ ...initialAuthState })
   },
   login: (accessToken, refreshToken) => {
+    set({
+      ...initialAuthState,
+      accessToken,
+      refreshToken,
+      isAuth: true,
+    })
+  },
+  connectFactory: (accessToken, refreshToken) => {
     set({
       ...initialAuthState,
       accessToken,

@@ -1,14 +1,14 @@
-import { Navigate, useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from 'react-router-dom'
 
-import { AuthenticationRoutes } from "./features/authentication/AuthenticationRoutes";
-import { AuthenticationRoutesPath } from "./config/Router";
-import { DashboardRoutes } from "./features/Dashboard/DashboardRoutes";
-import { SelectionFactoryRoutes } from "@features/SelectionFactory/SelectionFactoryRoutes";
+import { AuthenticationRoutes } from './features/authentication/AuthenticationRoutes'
+import { AuthenticationRoutesPath } from './config/Router'
+import { DashboardRoutes } from './features/Dashboard/DashboardRoutes'
+import { SelectionFactoryRoutes } from '@features/SelectFactory/SelectFactoryRoutes'
 
 const Routes = () =>
   useRoutes([
     {
-      path: "",
+      path: '',
       element: (
         <Navigate to={AuthenticationRoutesPath.login.absolutePath} replace />
       ),
@@ -17,9 +17,9 @@ const Routes = () =>
     SelectionFactoryRoutes,
     DashboardRoutes,
     {
-      path: "*",
+      path: '*',
       element: <div>Page not found</div>,
     },
-  ]);
+  ])
 
-export default Routes;
+export default Routes
