@@ -6,8 +6,6 @@ import { toast } from 'react-toastify'
 
 import { CredentialType } from './interface'
 
-
-
 const withLoginPage = (Component: React.FC) => {
   const Hoc = () => {
     const {

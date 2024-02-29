@@ -4,6 +4,7 @@ import { AuthenticationRoutes } from './features/authentication/AuthenticationRo
 import { AuthenticationRoutesPath } from './config/Router'
 import { DashboardRoutes } from './features/Dashboard/DashboardRoutes'
 import { SelectionFactoryRoutes } from '@features/SelectFactory/SelectFactoryRoutes'
+import { SelectUnitRoutes } from '@features/SelectUnit/SelectUnitRoutes'
 
 const Routes = () =>
   useRoutes([
@@ -16,6 +17,7 @@ const Routes = () =>
     AuthenticationRoutes,
     SelectionFactoryRoutes,
     DashboardRoutes,
+    SelectUnitRoutes,
     {
       path: '*',
       element: <div>Page not found</div>,

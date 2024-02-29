@@ -3,7 +3,7 @@
 import { FC, SVGProps } from 'react'
 import { IconProps } from '@components/Icons/interface'
 
-import { ReactComponent as Home } from './icons/home.svg'
+import Home from './icons/home.svg?react'
 
 const Icon =
   (SvgComponent: FC<SVGProps<SVGSVGElement>>): React.FC<IconProps> =>

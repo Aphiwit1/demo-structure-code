@@ -4,7 +4,9 @@ export interface AuthenticationSlice {
   accessToken?: string
   refreshToken?: string
   isAuth: boolean
+  isSelectedFactory: boolean
   logout: () => void
+  selectFactory: () => void
   login: (accessToken?: string, refreshToken?: string) => void
   refresh: (accessToken?: string, refreshToken?: string) => void
 }
@@ -22,6 +24,7 @@ export const createAuthenticationSlice: StateCreator<
   accessToken: undefined,
   refreshToken: undefined,
   isAuth: false,
+  isSelectedFactory: false,
   logout: () => {
     set({ ...initialAuthState })
   },
@@ -31,14 +34,14 @@ export const createAuthenticationSlice: StateCreator<
       accessToken,
       refreshToken,
       isAuth: true,
+      isSelectedFactory: false,
     })
   },
-  connectFactory: (accessToken, refreshToken) => {
+  selectFactory: () => {
     set({
       ...initialAuthState,
-      accessToken,
-      refreshToken,
       isAuth: true,
+      isSelectedFactory: true,
     })
   },
   refresh: (accessToken, refreshToken) => {

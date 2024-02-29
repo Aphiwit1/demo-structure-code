@@ -20,6 +20,7 @@ export const useAppStore = create<AppStore>()(
       name: 'persist:authenticationByNueng',
       partialize: state => ({
         isAuth: state.isAuth,
+        isSelectedFactory: state.isSelectedFactory,
         accessToken: state.accessToken,
         refreshToken: state.refreshToken,
       }),
