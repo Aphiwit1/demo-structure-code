@@ -12,7 +12,6 @@ const LoginPage = ({ control, handleLogin }: any) => (
         control={control}
         rules={{
           ...requiredRule,
-          ...emailRule,
         }}
         placeholder='Enter your email'
         type='email'

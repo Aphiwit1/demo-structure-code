@@ -23,11 +23,11 @@ export const DashboardRoutesPath = {
   },
 }
 // ---------------------------------------------------------------------
-export const selectFactoryPath = 'selectFactory'
-export const SelectFactoryRoutesPath = {
-  selectFactory: {
-    path: 'selectFactory',
-    absolutePath: `/${selectFactoryPath}`,
+export const selectCompanyPath = 'selectCompany'
+export const SelectCompanyRoutesPath = {
+  selectCompany: {
+    path: selectCompanyPath,
+    absolutePath: `/${selectCompanyPath}`,
   },
 }
 // ---------------------------------------------------------------------

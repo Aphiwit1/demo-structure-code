@@ -18,7 +18,7 @@ export const DashboardRoutes = {
       element: <Dashboard />,
     },
     {
-      path: 'xx',
+      path: DashboardRoutesPath.remainingLifeSetting.path,
       element: <RemainingLifeSetting />,
     },
   ],

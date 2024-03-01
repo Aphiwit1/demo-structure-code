@@ -1,9 +1,13 @@
 import ConfirmModal from '@components/Modal/components/ConfirmModal'
 import { useModal } from '@components/Modal/context/ModalContext'
+import { DashboardRoutesPath } from '@config/Router'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import useBreadcrumbs from 'use-react-router-breadcrumbs'
 
 const withDashboard = (Component: React.FC) => {
   const Hoc = () => {
+    const navigate = useNavigate()
     const { openModal: openDeleteModal } = useModal<any>({
       component: ({ onConfirm, message }: any) => (
         <ConfirmModal
@@ -18,6 +22,13 @@ const withDashboard = (Component: React.FC) => {
       ),
     })
 
+    const breadcrumbs = useBreadcrumbs()
+    console.log('breadcrumbs>>>', breadcrumbs)
+
+    const onHandleSetting = () => {
+      navigate(DashboardRoutesPath.remainingLifeSetting.absolutePath)
+    }
+
     const handleOnDeleteDocument = async () => {
       await openDeleteModal({
         message: 'Are you sure to delete this document',
@@ -26,6 +37,8 @@ const withDashboard = (Component: React.FC) => {
 
     const newProps: any = {
       handleOnDeleteDocument,
+      onHandleSetting,
+      breadcrumbs,
     }
     return <Component {...newProps} />
   }

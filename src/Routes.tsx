@@ -3,8 +3,9 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import { AuthenticationRoutes } from './features/authentication/AuthenticationRoutes'
 import { AuthenticationRoutesPath } from './config/Router'
 import { DashboardRoutes } from './features/Dashboard/DashboardRoutes'
-import { SelectionFactoryRoutes } from '@features/SelectFactory/SelectFactoryRoutes'
+
 import { SelectUnitRoutes } from '@features/SelectUnit/SelectUnitRoutes'
+import { SelectCompanyRoutes } from '@features/SelectCompany/SelectCompanyRoutes'
 
 const Routes = () =>
   useRoutes([
@@ -15,7 +16,7 @@ const Routes = () =>
       ),
     },
     AuthenticationRoutes,
-    SelectionFactoryRoutes,
+    SelectCompanyRoutes,
     DashboardRoutes,
     SelectUnitRoutes,
     {
