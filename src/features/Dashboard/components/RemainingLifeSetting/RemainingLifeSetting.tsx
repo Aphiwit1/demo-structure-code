@@ -8,26 +8,62 @@ const RemainingLifeSetting = ({ handleSetting, control }: any) => {
     <div>
       <form onSubmit={handleSetting}>
         <InputField
-          name='email'
+          name='unit'
           control={control}
           rules={{
             ...requiredRule,
           }}
           placeholder='Enter  Unit'
-          type='unit'
+          type='text'
           label='Unit'
           className='mb-[23px]'
         />
 
         <InputField
-          name='email'
+          name='text'
           control={control}
           rules={{
             ...requiredRule,
           }}
           placeholder='Enter  Unit'
-          type='unit'
-          label='Unit'
+          type='number'
+          label='Normal'
+          className='mb-[23px]'
+        />
+
+        <InputField
+          name='text'
+          control={control}
+          rules={{
+            ...requiredRule,
+          }}
+          placeholder='Enter  Unit'
+          type='number'
+          label='Warning'
+          className='mb-[23px]'
+        />
+
+        <InputField
+          name='text'
+          control={control}
+          rules={{
+            ...requiredRule,
+          }}
+          placeholder='Enter  Unit'
+          type='number'
+          label='Alarm'
+          className='mb-[23px]'
+        />
+
+        <InputField
+          name='text'
+          control={control}
+          rules={{
+            ...requiredRule,
+          }}
+          placeholder='Enter  Unit'
+          type='number'
+          label='Alert'
           className='mb-[23px]'
         />
 
