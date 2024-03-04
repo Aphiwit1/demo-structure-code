@@ -15,7 +15,10 @@ const SelectUnitPage = ({ onHandleSelectedUnit }: any) => {
             </h5>
           </a>
           <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
-            Minimum Remaining Life: 87 Days
+            Minimum Remaining Life: 87 Days{' '}
+            <Tag tagStyle={StatusEnum.NORMAL} isShowPrefixDot={true}>
+              NORMAL
+            </Tag>
           </p>
           <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
             PredictedDate of Tube Leakage: 27 May 2024
